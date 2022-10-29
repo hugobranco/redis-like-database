@@ -4,7 +4,7 @@ from utils.custom_logger import CustomLogger
 
 class Command():
 
-    def __init__(self, key: str, value: object):
+    def __init__(self, key: str, value: str):
         self.logger = CustomLogger(level=settings.LOG_LEVEL, name=__name__)
         self.key = key
         self.value = value

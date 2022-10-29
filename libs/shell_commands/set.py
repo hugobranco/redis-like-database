@@ -1,3 +1,4 @@
+import ast
 import services
 from .command import Command
 
@@ -10,7 +11,7 @@ class Set(Command):
             if(self.key in services.redis_storage_db.keys()):
                 return_message = "Key already exists. Key value updated"
 
-            services.redis_storage_db[self.key] = self.value
+            services.redis_storage_db[self.key] = ast.literal_eval(self.value)
 
             return return_message
         except Exception as ex:
